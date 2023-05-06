@@ -10,9 +10,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
-import { MatIconModule } from '@angular/material/icon';
-import { MatRippleModule } from '@angular/material/core';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 
 @NgModule({
@@ -22,6 +19,7 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    CdkStepperModule,
 
     // Material modules
     MatFormFieldModule,

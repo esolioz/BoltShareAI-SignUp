@@ -1,95 +1,101 @@
-<div class="form-wrapper">
-    <form>
-        <h2>Your details</h2>
-        <mat-form-field appearance="outline">
-            <mat-label>First name</mat-label>
-            <input matInput type="text" placeholder="Enter your first name">
-        </mat-form-field>
+<app-stepper #bsCdkStepper>
+    <cdk-step>
+        <form>
+            <h2>Your details</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>First name</mat-label>
+                <input matInput type="text" placeholder="Enter your first name">
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Last name</mat-label>
-            <input matInput type="text" placeholder="Enter your last name">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Last name</mat-label>
+                <input matInput type="text" placeholder="Enter your last name">
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput type="text" placeholder="Enter your email">
-        </mat-form-field>
-        <button mat-flat-button color="primary">Next</button>
-    </form>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" placeholder="Enter your email">
+            </mat-form-field>
+            <button mat-flat-button color="primary" cdkStepperNext>Next</button>
+        </form>
+    </cdk-step>
+    <cdk-step>
+        <form>
+            <h2>Set a password</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Password">
+            </mat-form-field>
 
-    <form>
-        <h2>Set a password</h2>
-        <mat-form-field appearance="outline">
-            <mat-label>Password</mat-label>
-            <input matInput type="password" placeholder="Password">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Confirm password</mat-label>
+                <input matInput type="password" placeholder="Confirm password">
+            </mat-form-field>
+            <button mat-flat-button color="primary" cdkStepperNext>Next</button>
+            <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
+            <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Confirm password</mat-label>
-            <input matInput type="password" placeholder="Confirm password">
-        </mat-form-field>
-        <button mat-flat-button color="primary">Next</button>
-        <button mat-stroked-button color="primary">Back</button>
-        <button mat-button color="primary">Cancel</button>
+        </form>
+    </cdk-step>
+    <cdk-step>
+        <form>
+            <h2>Payment info</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>Card number</mat-label>
+                <input matInput type="text" placeholder="Card number">
+            </mat-form-field>
 
-    </form>
+            <mat-form-field appearance="outline">
+                <mat-label>Expiry date</mat-label>
+                <input matInput type="text" placeholder="MM / YY">
+            </mat-form-field>
 
-    <form>
-        <h2>Payment info</h2>
-        <mat-form-field appearance="outline">
-            <mat-label>Card number</mat-label>
-            <input matInput type="text" placeholder="Card number">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>CVC</mat-label>
+                <input matInput type="number" placeholder="CVC">
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Expiry date</mat-label>
-            <input matInput type="text" placeholder="MM / YY">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Street address</mat-label>
+                <input matInput type="text" placeholder="Street address">
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>CVC</mat-label>
-            <input matInput type="number" placeholder="CVC">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Postal code</mat-label>
+                <input matInput type="text" placeholder="Postal code">
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Street address</mat-label>
-            <input matInput type="text" placeholder="Street address">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>City / town / village</mat-label>
+                <input matInput type="text" placeholder="City / town / village">
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Postal code</mat-label>
-            <input matInput type="text" placeholder="Postal code">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>City / town / village</mat-label>
-            <input matInput type="text" placeholder="City / town / village">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>Country</mat-label>
-            <input matInput type="text" placeholder="Country">
-        </mat-form-field>
-        <button mat-flat-button color="primary">Next</button>
-        <button mat-stroked-button color="primary">Back</button>
-        <button mat-button color="primary">Cancel</button>
-    </form>
-    <div class="review">
-        <h2>Review your info</h2>
-        <div>Username : john.doe@foo.com</div>
-        <div>Email : john.doe@foo.com</div>
-        <div>First name : John</div>
-        <div>Last name : Doe</div>
-        <div>Address
-            <ul>
-                <li>600 Amphitheatre Parkway</li>
-                <li>Mountain View</li>
-                <li>CA 94043, USA</li>
-            </ul>
+            <mat-form-field appearance="outline">
+                <mat-label>Country</mat-label>
+                <input matInput type="text" placeholder="Country">
+            </mat-form-field>
+            <button mat-flat-button color="primary" cdkStepperNext>Next</button>
+            <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
+            <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
+        </form>
+    </cdk-step>
+    <cdk-step>
+        <div class="review">
+            <h2>Review your info</h2>
+            <div>Username : john.doe@foo.com</div>
+            <div>Email : john.doe@foo.com</div>
+            <div>First name : John</div>
+            <div>Last name : Doe</div>
+            <div>Address
+                <ul>
+                    <li>600 Amphitheatre Parkway</li>
+                    <li>Mountain View</li>
+                    <li>CA 94043, USA</li>
+                </ul>
+            </div>
+            <button mat-flat-button color="primary">Complete</button>
+            <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
+            <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
         </div>
-        <button mat-flat-button color="primary">Complete</button>
-        <button mat-stroked-button color="primary">Back</button>
-        <button mat-button color="primary">Cancel</button>
-    </div>
-</div>
+    </cdk-step>
+</app-stepper>

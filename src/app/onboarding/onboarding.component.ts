@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { CdkStepper } from '@angular/cdk/stepper';
+import { Component, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
@@ -7,6 +8,7 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./onboarding.component.scss'],
 })
 export class OnboardingComponent {
+  @ViewChild('bsCdkStepper') bsCdkStepper!: CdkStepper;
   /**
    * User details
    */

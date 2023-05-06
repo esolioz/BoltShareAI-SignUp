@@ -1,1 +1,21 @@
-<p>stepper works!</p>
+<div class="bs-page-layout">
+    <div class="bs-stepper">
+        <!-- Left content-->
+        <div class="bs-stepper__left-content">
+            <ng-container *ngFor="let step of steps; let i = index;">
+                <div (click)="selectedIndex = i">
+                    <ng-container *ngIf="step.stepLabel; else displayTextLabel"
+                        [ngTemplateOutlet]="step.stepLabel.template">
+                    </ng-container>
+                    <ng-template #displayTextLabel>
+                        {{ 'There is no steps label configured' }}
+                    </ng-template>
+                </div>
+            </ng-container>
+        </div>
+        <!-- Right content-->
+        <div class="bs-stepper__right-content">
+            <ng-container [ngTemplateOutlet]="selected ? selected.content : null"></ng-container>
+        </div>
+    </div>
+</div>
