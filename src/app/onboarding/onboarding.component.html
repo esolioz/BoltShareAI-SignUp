@@ -1,4 +1,4 @@
-<app-stepper>
+<app-stepper #bsCdkStepper>
     <cdk-step>
         <form>
             <h2>Your details</h2>
@@ -16,7 +16,7 @@
                 <mat-label>Email</mat-label>
                 <input matInput type="text" placeholder="Enter your email">
             </mat-form-field>
-            <button mat-flat-button color="primary">Next</button>
+            <button mat-flat-button color="primary" cdkStepperNext>Next</button>
         </form>
     </cdk-step>
     <cdk-step>
@@ -31,9 +31,9 @@
                 <mat-label>Confirm password</mat-label>
                 <input matInput type="password" placeholder="Confirm password">
             </mat-form-field>
-            <button mat-flat-button color="primary">Next</button>
-            <button mat-stroked-button color="primary">Back</button>
-            <button mat-button color="primary">Cancel</button>
+            <button mat-flat-button color="primary" cdkStepperNext>Next</button>
+            <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
+            <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
 
         </form>
     </cdk-step>
@@ -74,9 +74,9 @@
                 <mat-label>Country</mat-label>
                 <input matInput type="text" placeholder="Country">
             </mat-form-field>
-            <button mat-flat-button color="primary">Next</button>
-            <button mat-stroked-button color="primary">Back</button>
-            <button mat-button color="primary">Cancel</button>
+            <button mat-flat-button color="primary" cdkStepperNext>Next</button>
+            <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
+            <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
         </form>
     </cdk-step>
     <cdk-step>
@@ -94,8 +94,8 @@
                 </ul>
             </div>
             <button mat-flat-button color="primary">Complete</button>
-            <button mat-stroked-button color="primary">Back</button>
-            <button mat-button color="primary">Cancel</button>
+            <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
+            <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
         </div>
     </cdk-step>
 </app-stepper>
