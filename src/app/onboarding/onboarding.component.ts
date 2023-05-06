@@ -1,6 +1,6 @@
 import { CdkStepper } from '@angular/cdk/stepper';
 import { Component, ViewChild } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-onboarding',
@@ -13,31 +13,31 @@ export class OnboardingComponent {
    * User details
    */
   formUserDetails = this._formBuilder.group({
-    firstName: [''],
-    lastName: [''],
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
     username: [''],
-    email: [''],
+    email: ['', [Validators.required, Validators.email]],
   });
 
   /**
    * Password
    */
   formPassword = this._formBuilder.group({
-    password: [''],
-    confirmPassword: [''],
+    password: ['', Validators.required],
+    confirmPassword: ['', Validators.required],
   });
 
   /**
    * Payment
    */
   formPayment = this._formBuilder.group({
-    creditCardNumber: [''],
-    creditCardExpiryDate: [''],
-    creditCardCvvCode: [''],
-    street: [''],
-    postalCode: [''],
-    city: [''],
-    country: [''],
+    creditCardNumber: ['', Validators.required],
+    creditCardExpiryDate: ['', Validators.required],
+    creditCardCvvCode: ['', Validators.required],
+    street: ['', Validators.required],
+    postalCode: ['', Validators.required],
+    city: ['', Validators.required],
+    country: ['', Validators.required],
   });
 
   constructor(private _formBuilder: FormBuilder) {}
