@@ -1,5 +1,9 @@
 @use "./breakpoints" as *;
 
+/// Breakpoints mananger
+/// @param {string} $breakpoint - Breakpoint
+/// @requires $breakpoints
+
 @mixin match-to($breakpoint) {
   $raw-query: map-get($breakpoints, $breakpoint);
 
