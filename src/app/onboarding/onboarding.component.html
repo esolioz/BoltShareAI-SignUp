@@ -68,33 +68,56 @@
     </cdk-step>
     <!-- Password step -->
     <cdk-step>
-        <form [formGroup]="formPassword">
-            <!-- Navigation items-->
-            <ng-template cdkStepLabel>
-                <div class="bs-steps-item__icon">
-                    <mat-icon>check_circle_outline</mat-icon>
-                </div>
-                <div class="bs-steps-item__content">
-                    <div class="bs-content-title">Choose a password</div>
-                    <div class="bs-content-subtitle">Must be at least 8
-                        characters</div>
-                </div>
-            </ng-template>
-            <h2>Set a password</h2>
-            <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput formControlName="password" type="password" placeholder="Password">
-            </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Confirm password</mat-label>
-                <input matInput formControlName="confirmPassword" type="password" placeholder="Confirm password">
-            </mat-form-field>
-            <button mat-flat-button color="primary" cdkStepperNext [disabled]="formPassword.invalid">Next</button>
-            <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
-            <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
+        <!-- Navigation items-->
+        <ng-template cdkStepLabel>
+            <div class="bs-steps-item__icon">
+                <mat-icon>check_circle_outline</mat-icon>
+            </div>
+            <div class="bs-steps-item__content">
+                <div class="bs-content-title">Choose a password</div>
+                <div class="bs-content-subtitle">Must be at least 8
+                    characters</div>
+            </div>
+        </ng-template>
 
-        </form>
+        <!-- Header -->
+        <div class="bs-right-content-top">
+            <div class="bs-right-content-top__header">
+                <div class="bs-header-icon">
+                    <mat-icon>password</mat-icon>
+                </div>
+                <h2 class="bs-header-title">Choose a password</h2>
+                <div class="bs-header-subtitle">Must be at least 8
+                    characters.</div>
+            </div>
+        </div>
+
+        <div class="bs-right-content-main">
+            <form [formGroup]="formPassword" class="bs-right-content-main__form">
+                <div class="flex-col gap-2">
+                    <mat-label class="form-label">Password</mat-label>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="password" type="password" placeholder="Password">
+                        <mat-icon matIconSuffix>visibility</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="flex-col gap-2">
+                    <mat-label class="form-label">Confirm password</mat-label>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="confirmPassword" type="password"
+                            placeholder="Confirm password">
+                        <mat-icon matIconSuffix>visibility_off</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="bs-form-actions">
+                    <button mat-flat-button color="primary" cdkStepperNext
+                        [disabled]="formPassword.invalid">Next</button>
+                    <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
+                    <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
+                </div>
+            </form>
+        </div>
     </cdk-step>
     <!-- Payment step -->
     <cdk-step>
