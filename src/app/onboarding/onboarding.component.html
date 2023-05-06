@@ -121,57 +121,94 @@
     </cdk-step>
     <!-- Payment step -->
     <cdk-step>
-        <form [formGroup]="formPayment">
-            <!-- Navigation items-->
-            <ng-template cdkStepLabel>
-                <div class="bs-steps-item__icon">
-                    <mat-icon>check_circle_outline</mat-icon>
+
+        <!-- Navigation items-->
+        <ng-template cdkStepLabel>
+            <div class="bs-steps-item__icon">
+                <mat-icon>check_circle_outline</mat-icon>
+            </div>
+            <div class="bs-steps-item__content">
+                <div class="bs-content-title">Payment</div>
+                <div class="bs-content-subtitle">Enter your payment
+                    details.</div>
+            </div>
+        </ng-template>
+        <!-- Header -->
+        <div class="bs-right-content-top">
+            <div class="bs-right-content-top__header">
+                <div class="bs-header-icon">
+                    <mat-icon>credit_card</mat-icon>
                 </div>
-                <div class="bs-steps-item__content">
-                    <div class="bs-content-title">Payment</div>
-                    <div class="bs-content-subtitle">Enter your payment
-                        details.</div>
+                <h2 class="bs-header-title">Payment</h2>
+                <div class="bs-header-subtitle">Enter your payment details.</div>
+            </div>
+        </div>
+        <div class="bs-right-content-main">
+
+            <form [formGroup]="formPayment" class="bs-right-content-main__form">
+                <div class="flex-col gap-1">
+                    <mat-label class="form-label">Card number</mat-label>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="creditCardNumber" class="input" type="text"
+                            placeholder="Card number">
+                    </mat-form-field>
                 </div>
-            </ng-template>
-            <h2>Payment info</h2>
-            <mat-form-field appearance="outline">
-                <mat-label>Card number</mat-label>
-                <input matInput formControlName="creditCardNumber" type="text" placeholder="Card number">
-            </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Expiry date</mat-label>
-                <input matInput formControlName="creditCardExpiryDate" type="text" placeholder="MM / YY">
-            </mat-form-field>
+                <div class="flex-col gap-1 bs-form-location-date-cvc">
+                    <div class="flex-col flex-full gap-2">
+                        <mat-label class="form-label">Expiry date</mat-label>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="creditCardExpiryDate" class="input" type="text"
+                                placeholder="MM / YY">
+                        </mat-form-field>
+                    </div>
+                    <div class="flex-col flex-full gap-2">
+                        <mat-label class="form-label">CVC</mat-label>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="creditCardCvcCode" class="input" type="number"
+                                placeholder="CVC">
+                        </mat-form-field>
+                    </div>
+                </div>
 
-            <mat-form-field appearance="outline">
-                <mat-label>CVC</mat-label>
-                <input matInput formControlName="creditCardCvcCode" type="number" placeholder="CVC">
-            </mat-form-field>
+                <div class="flex-col gap-2">
+                    <mat-label class="form-label">Street address</mat-label>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="street" type="text" placeholder="Street address">
+                    </mat-form-field>
+                </div>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Street address</mat-label>
-                <input matInput formControlName="street" type="text" placeholder="Street address">
-            </mat-form-field>
+                <div class="flex-col gap-1 bs-form-location">
+                    <div class="flex-col flex-full gap-2">
+                        <mat-label lass="form-label">Postal code</mat-label>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="postalCode" type="text" placeholder="Postal code">
+                        </mat-form-field>
+                    </div>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Postal code</mat-label>
-                <input matInput formControlName="postalCode" type="text" placeholder="Postal code">
-            </mat-form-field>
+                    <div class="flex-col flex-full gap-2">
+                        <mat-label lass="form-label">City / town / village</mat-label>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="city" ype="text" placeholder="City / town / village">
+                        </mat-form-field>
+                    </div>
+                </div>
 
-            <mat-form-field appearance="outline">
-                <mat-label>City / town / village</mat-label>
-                <input matInput formControlName="city" type="text" placeholder="City / town / village">
-            </mat-form-field>
+                <div class="flex-col gap-2">
+                    <mat-label class="form-label">Country</mat-label>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="country" ype="text" placeholder="Country">
+                    </mat-form-field>
+                </div>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Country</mat-label>
-                <input matInput formControlName="country" type="text" placeholder="Country">
-            </mat-form-field>
-            <button mat-flat-button color="primary" cdkStepperNext [disabled]="formPayment.invalid">Next</button>
-            <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
-            <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
-        </form>
+                <div class="bs-form-actions">
+                    <button mat-flat-button color="primary" cdkStepperNext
+                        [disabled]="formPayment.invalid">Next</button>
+                    <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
+                    <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
+                </div>
+            </form>
+        </div>
     </cdk-step>
     <!-- Review step -->
     <cdk-step>
