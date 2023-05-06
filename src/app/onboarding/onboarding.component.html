@@ -51,7 +51,7 @@
                 <mat-label>Confirm password</mat-label>
                 <input matInput formControlName="confirmPassword" type="password" placeholder="Confirm password">
             </mat-form-field>
-            <button mat-flat-button color="primary" cdkStepperNext>Next</button>
+            <button mat-flat-button color="primary" cdkStepperNext [disabled]="formPassword.invalid">Next</button>
             <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
             <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
 
