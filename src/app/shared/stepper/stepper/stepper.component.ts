@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./stepper.component.scss'],
   providers: [{ provide: CdkStepper, useExisting: StepperComponent }],
 })
-export class StepperComponent extends CdkStepper {}
+export class StepperComponent extends CdkStepper {
+  inactive = 'bs-left-content-top__steps-inactive';
+}

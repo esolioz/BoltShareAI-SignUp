@@ -2,16 +2,46 @@
     <div class="bs-stepper">
         <!-- Left content-->
         <div class="bs-stepper__left-content">
-            <ng-container *ngFor="let step of steps; let i = index;">
-                <div (click)="selectedIndex = i">
-                    <ng-container *ngIf="step.stepLabel; else displayTextLabel"
-                        [ngTemplateOutlet]="step.stepLabel.template">
-                    </ng-container>
-                    <ng-template #displayTextLabel>
-                        {{ 'There is no steps label configured' }}
-                    </ng-template>
+            <div class="bs-left-content-top">
+                <!-- Company -->
+                <div class="bs-left-content-top__company">
+                    <div class="bs-company-icon">
+                        <mat-icon>offline_bolt</mat-icon>
+                    </div>
+                    <div class="bs-company-name">
+                        BoltShare AI
+                    </div>
+
                 </div>
-            </ng-container>
+
+                <!-- Steps-->
+                <div class="bs-left-content-top__steps">
+                    <ng-container *ngFor="let step of steps; let i = index;">
+                        <div class="bs-steps-item" [ngClass]="(selectedIndex === i) ? '' : inactive"
+                            (click)="selectedIndex = i">
+                            <ng-container *ngIf="step.stepLabel; else displayTextError"
+                                [ngTemplateOutlet]="step.stepLabel.template">
+                            </ng-container>
+                            <ng-template #displayTextError>
+                                {{ 'There is no steps label configured!' }}
+                            </ng-template>
+                        </div>
+                    </ng-container>
+                </div>
+
+            </div>
+
+
+            <!-- Footer -->
+            <div class="bs-left-content-footer">
+                <div class="bs-left-content-footer__copyright">
+                    © BoltShare AI 2023
+                </div>
+                <div class="bs-left-content-footer__help">
+                    <mat-icon>contact_support</mat-icon>
+                    help@chicken-app.ai
+                </div>
+            </div>
         </div>
         <!-- Right content-->
         <div class="bs-stepper__right-content">

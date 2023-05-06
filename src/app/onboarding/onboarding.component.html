@@ -5,11 +5,15 @@
 
             <!-- Navigation items-->
             <ng-template cdkStepLabel>
-
-                <div class="navigation">
-                    <div class="navigation__title">Your details</div>
+                <div class="bs-stepper__left-content__top__steps__step-item__icon">
+                    <mat-icon>check_circle_outline</mat-icon>
                 </div>
-
+                <div class="bs-stepper__left-content__top__steps__step-item__content">
+                    <div class="bs-stepper__left-content__top__steps__step-item__content__title">Your details</div>
+                    <div class="bs-stepper__left-content__top__steps__step-item__content__subtitle">Please provide your
+                        name
+                        and email</div>
+                </div>
             </ng-template>
 
             <h2>Your details</h2>
@@ -35,11 +39,14 @@
         <form [formGroup]="formPassword">
             <!-- Navigation items-->
             <ng-template cdkStepLabel>
-
-                <div class="navigation">
-                    <div class="navigation__title">Set a password</div>
+                <div class="bs-steps-item__icon">
+                    <mat-icon>check_circle_outline</mat-icon>
                 </div>
-
+                <div class="bs-steps-item__content">
+                    <div class="bs-content-title">Choose a password</div>
+                    <div class="bs-content-subtitle">Must be at least 8
+                        characters</div>
+                </div>
             </ng-template>
             <h2>Set a password</h2>
             <mat-form-field appearance="outline">
@@ -62,8 +69,13 @@
         <form [formGroup]="formPayment">
             <!-- Navigation items-->
             <ng-template cdkStepLabel>
-                <div class="navigation">
-                    <div class="navigation__title">Payment info</div>
+                <div class="bs-steps-item__icon">
+                    <mat-icon>check_circle_outline</mat-icon>
+                </div>
+                <div class="bs-steps-item__content">
+                    <div class="bs-content-title">Payment</div>
+                    <div class="bs-content-subtitle">Enter your payment
+                        details.</div>
                 </div>
             </ng-template>
             <h2>Payment info</h2>
@@ -111,8 +123,13 @@
         <div class="review">
             <!-- Navigation items-->
             <ng-template cdkStepLabel>
-                <div class="navigation">
-                    <div class="navigation__title">Review your info</div>
+                <div class="bs-steps-item__icon">
+                    <mat-icon>check_circle_outline</mat-icon>
+                </div>
+                <div class="bs-steps-item__content">
+                    <div class="bs-content-title">Review</div>
+                    <div class="bs-content-subtitle">Let’s make sure
+                        everything’s right.</div>
                 </div>
             </ng-template>
             <h2>Review your info</h2>
