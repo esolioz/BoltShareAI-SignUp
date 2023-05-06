@@ -1,6 +1,6 @@
 import { CdkStepper } from '@angular/cdk/stepper';
 import { Component, ViewChild } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-onboarding',
@@ -13,10 +13,10 @@ export class OnboardingComponent {
    * User details
    */
   formUserDetails = this._formBuilder.group({
-    firstName: [''],
-    lastName: [''],
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
     username: [''],
-    email: [''],
+    email: ['', [Validators.required, Validators.email]],
   });
 
   /**

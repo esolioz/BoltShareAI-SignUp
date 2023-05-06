@@ -1,6 +1,7 @@
 <app-stepper #bsCdkStepper>
+    <!-- User details step -->
     <cdk-step>
-        <form>
+        <form [formGroup]="formUserDetails">
 
             <!-- Navigation items-->
             <ng-template cdkStepLabel>
@@ -14,21 +15,22 @@
             <h2>Your details</h2>
             <mat-form-field appearance="outline">
                 <mat-label>First name</mat-label>
-                <input matInput type="text" placeholder="Enter your first name">
+                <input matInput formControlName="firstName" type="text" placeholder="Enter your first name">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Last name</mat-label>
-                <input matInput type="text" placeholder="Enter your last name">
+                <input matInput formControlName="lastName" type="text" placeholder="Enter your last name">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput type="text" placeholder="Enter your email">
+                <input matInput formControlName="email" type="text" placeholder="Enter your email">
             </mat-form-field>
-            <button mat-flat-button color="primary" cdkStepperNext>Next</button>
+            <button mat-flat-button color="primary" cdkStepperNext [disabled]="formUserDetails.invalid">Next</button>
         </form>
     </cdk-step>
+    <!-- Password step -->
     <cdk-step>
         <form>
             <!-- Navigation items-->
@@ -55,6 +57,7 @@
 
         </form>
     </cdk-step>
+    <!-- Payment step -->
     <cdk-step>
         <form>
             <!-- Navigation items-->
@@ -103,6 +106,7 @@
             <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
         </form>
     </cdk-step>
+    <!-- Review step -->
     <cdk-step>
         <div class="review">
             <!-- Navigation items-->
