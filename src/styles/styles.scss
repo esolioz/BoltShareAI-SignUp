@@ -4,6 +4,7 @@
 // Plus imports for other components in your app.
 
 // Import
+@use "abstracts/mixins" as *;
 @use "abstracts/utils" as *;
 @use "components/buttons" as *;
 
@@ -65,15 +66,19 @@ body {
     height: 100%;
 
     &__left-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 60%;
-      height: 100%;
-      max-width: 600px;
-      background-color: #013e73;
-      color: #fff;
-      padding-inline: 2rem;
+      display: none;
+
+      @include match-to("large") {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 60%;
+        height: 100%;
+        max-width: 600px;
+        background-color: #013e73;
+        color: #fff;
+        padding-inline: 2rem;
+      }
 
       .bs-left-content-top {
         display: flex;
