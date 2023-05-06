@@ -4,6 +4,7 @@
 // Plus imports for other components in your app.
 
 // Import
+@use "abstracts/utils" as *;
 @use "components/buttons" as *;
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -301,38 +302,4 @@ body {
       }
     }
   }
-}
-
-.flex-full {
-  flex: 1 1 100%;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.gap-1 {
-  gap: 0.5rem;
-}
-
-.gap-2 {
-  gap: 1rem;
-}
-
-.gap-3 {
-  gap: 1.5rem;
-}
-
-.gap-4 {
-  gap: 2rem;
-}
-
-.form-label {
-  font-weight: 400;
-  color: #01213c;
 }
