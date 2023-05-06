@@ -32,24 +32,24 @@
     </cdk-step>
     <!-- Password step -->
     <cdk-step>
-        <form>
+        <form [formGroup]="formPassword">
             <!-- Navigation items-->
             <ng-template cdkStepLabel>
 
                 <div class="navigation">
-                    <div class="navigation__title">set a password</div>
+                    <div class="navigation__title">Set a password</div>
                 </div>
 
             </ng-template>
             <h2>Set a password</h2>
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput type="password" placeholder="Password">
+                <input matInput formControlName="password" type="password" placeholder="Password">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Confirm password</mat-label>
-                <input matInput type="password" placeholder="Confirm password">
+                <input matInput formControlName="confirmPassword" type="password" placeholder="Confirm password">
             </mat-form-field>
             <button mat-flat-button color="primary" cdkStepperNext>Next</button>
             <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>

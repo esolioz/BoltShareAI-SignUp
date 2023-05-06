@@ -23,8 +23,8 @@ export class OnboardingComponent {
    * Password
    */
   formPassword = this._formBuilder.group({
-    password: [''],
-    confirmPassword: [''],
+    password: ['', Validators.required],
+    confirmPassword: ['', Validators.required],
   });
 
   /**
