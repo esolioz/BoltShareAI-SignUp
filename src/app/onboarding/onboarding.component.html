@@ -59,7 +59,7 @@
     </cdk-step>
     <!-- Payment step -->
     <cdk-step>
-        <form>
+        <form [formGroup]="formPayment">
             <!-- Navigation items-->
             <ng-template cdkStepLabel>
                 <div class="navigation">
@@ -69,39 +69,39 @@
             <h2>Payment info</h2>
             <mat-form-field appearance="outline">
                 <mat-label>Card number</mat-label>
-                <input matInput type="text" placeholder="Card number">
+                <input matInput formControlName="creditCardNumber" type="text" placeholder="Card number">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Expiry date</mat-label>
-                <input matInput type="text" placeholder="MM / YY">
+                <input matInput formControlName="creditCardExpiryDate" type="text" placeholder="MM / YY">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>CVC</mat-label>
-                <input matInput type="number" placeholder="CVC">
+                <input matInput formControlName="creditCardCvcCode" type="number" placeholder="CVC">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Street address</mat-label>
-                <input matInput type="text" placeholder="Street address">
+                <input matInput formControlName="street" type="text" placeholder="Street address">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Postal code</mat-label>
-                <input matInput type="text" placeholder="Postal code">
+                <input matInput formControlName="postalCode" type="text" placeholder="Postal code">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>City / town / village</mat-label>
-                <input matInput type="text" placeholder="City / town / village">
+                <input matInput formControlName="city" type="text" placeholder="City / town / village">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Country</mat-label>
-                <input matInput type="text" placeholder="Country">
+                <input matInput formControlName="country" type="text" placeholder="Country">
             </mat-form-field>
-            <button mat-flat-button color="primary" cdkStepperNext>Next</button>
+            <button mat-flat-button color="primary" cdkStepperNext [disabled]="formPayment.invalid">Next</button>
             <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
             <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
         </form>
