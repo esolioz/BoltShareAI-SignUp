@@ -9,15 +9,15 @@
     border-style: solid;
   }
 
-  &--primary {
+  &_primary {
     &.mat-mdc-unelevated-button:not(:disabled) {
       background-color: colors.$base-blue;
-      color: $lighter-grey;
-      border-color: $base-blue;
+      color: colors.$lighter-grey;
+      border-color: colors.$base-blue;
     }
   }
 
-  &--secondary {
+  &_secondary {
     &.mat-mdc-unelevated-button:not(:disabled) {
       background-color: colors.$base-white;
       color: colors.$base-blue;
@@ -25,14 +25,14 @@
     }
   }
 
-  &--tertiary {
+  &_tertiary {
     &.mat-mdc-unelevated-button:not(:disabled) {
       color: colors.$base-blue;
       border-color: transparent;
     }
   }
 
-  &--disabled {
+  &_disabled {
     &.mat-mdc-unelevated-button[disabled] {
       border-color: colors.$light-grey;
     }
