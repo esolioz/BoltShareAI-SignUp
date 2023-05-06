@@ -1,38 +1,70 @@
 <app-stepper #bsCdkStepper>
     <!-- User details step -->
     <cdk-step>
-        <form [formGroup]="formUserDetails">
+        <!-- Navigation items-->
+        <ng-template cdkStepLabel>
+            <div class="bs-stepper__left-content__top__steps__step-item__icon">
+                <mat-icon>check_circle_outline</mat-icon>
+            </div>
+            <div class="bs-stepper__left-content__top__steps__step-item__content">
+                <div class="bs-stepper__left-content__top__steps__step-item__content__title">Your details</div>
+                <div class="bs-stepper__left-content__top__steps__step-item__content__subtitle">Please provide your
+                    name
+                    and email</div>
+            </div>
+        </ng-template>
 
-            <!-- Navigation items-->
-            <ng-template cdkStepLabel>
-                <div class="bs-stepper__left-content__top__steps__step-item__icon">
-                    <mat-icon>check_circle_outline</mat-icon>
+        <!-- Header -->
+        <div class="bs-right-content-top">
+            <div class="bs-right-content-top__header">
+                <div class="bs-header-icon">
+                    <mat-icon>account_circle</mat-icon>
                 </div>
-                <div class="bs-stepper__left-content__top__steps__step-item__content">
-                    <div class="bs-stepper__left-content__top__steps__step-item__content__title">Your details</div>
-                    <div class="bs-stepper__left-content__top__steps__step-item__content__subtitle">Please provide your
-                        name
-                        and email</div>
+                <h2 class="bs-header-title">Your details</h2>
+                <div class="bs-header-subtitle">Please provide your name and
+                    email.</div>
+            </div>
+        </div>
+
+        <div class="bs-right-content-main">
+
+            <div class="bs-right-content-main__sso" matRipple>
+                <img src="./../../../assets/img/bs-ai-linkedin-icon.png">
+                <div>Sign in with
+                    LinkedIn</div>
+            </div>
+            <div class="bs-right-content-main__or-divider">
+                <div class="bs-or-divider-left-line"></div>
+                <div class="bs-or-divider-label">OR</div>
+                <div class="bs-or-divider-right-line"></div>
+            </div>
+
+            <form [formGroup]="formUserDetails" class="bs-right-content-main__form">
+                <div class="flex-col gap-2">
+                    <mat-label class="form-label">First name</mat-label>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="firstName" type="text" placeholder="Enter your first name">
+                    </mat-form-field>
                 </div>
-            </ng-template>
+                <div class="flex-col gap-2">
+                    <mat-label class="form-label">Last name</mat-label>
+                    <mat-form-field appearance="outline">
 
-            <h2>Your details</h2>
-            <mat-form-field appearance="outline">
-                <mat-label>First name</mat-label>
-                <input matInput formControlName="firstName" type="text" placeholder="Enter your first name">
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>Last name</mat-label>
-                <input matInput formControlName="lastName" type="text" placeholder="Enter your last name">
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>Email</mat-label>
-                <input matInput formControlName="email" type="text" placeholder="Enter your email">
-            </mat-form-field>
-            <button mat-flat-button color="primary" cdkStepperNext [disabled]="formUserDetails.invalid">Next</button>
-        </form>
+                        <input matInput formControlName="lastName" type="text" placeholder="Enter your last name">
+                    </mat-form-field>
+                </div>
+                <div class="flex-col gap-2">
+                    <mat-label class="form-label">Email</mat-label>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="email" type="text" placeholder="Enter your email">
+                    </mat-form-field>
+                </div>
+                <div class="bs-form-actions">
+                    <button mat-flat-button type="button" cdkStepperNext
+                        [disabled]="formUserDetails.invalid">Next</button>
+                </div>
+            </form>
+        </div>
     </cdk-step>
     <!-- Password step -->
     <cdk-step>
