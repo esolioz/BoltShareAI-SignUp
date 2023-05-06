@@ -260,6 +260,13 @@ body {
           gap: 1rem;
           margin-block-start: 4rem;
 
+          .bs-form-location,
+          .bs-form-location-date-cvc {
+            @include match-to("x-small") {
+              flex-direction: row;
+            }
+          }
+
           .bs-form-actions {
             display: flex;
             flex-direction: column;
