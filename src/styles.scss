@@ -43,6 +43,7 @@ $BoltShareAI-SignUp-theme: mat.define-light-theme(
 
 html,
 body {
+  width: 100%;
   height: 100%;
 }
 body {
@@ -51,12 +52,99 @@ body {
 }
 
 .bs-page-layout {
+  display: flex;
+  height: 100%;
+
   .bs-stepper {
     display: flex;
+    flex: 1 1 100%;
+    height: 100%;
 
     &__left-content {
-      width: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 60%;
+      height: 100%;
+      max-width: 600px;
+      background-color: #013e73;
+      color: #fff;
+      padding-inline: 2rem;
+
+      .bs-left-content-top {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+
+        &__company {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          .bs-company-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+          }
+          .bs-company-name {
+            font-size: 30px;
+          }
+        }
+
+        &__steps {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          margin-top: 6rem;
+          .bs-steps-item {
+            display: flex;
+            gap: 0.5rem;
+            /*
+            &__icon {
+            }*/
+
+            &__content {
+              /*.bs-content-title {
+              }*/
+              &__subtitle {
+                font-weight: 300;
+              }
+            }
+          }
+
+          :hover {
+            cursor: pointer;
+          }
+
+          &-inactive {
+            color: #a6a6a6;
+          }
+        }
+      }
+
+      .bs-left-content-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        font-weight: 300;
+
+        /*
+        &__copyright {
+        }*/
+
+        &__help {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+        }
+      }
     }
+
     &__right-content {
       width: 70%;
 

@@ -8,6 +8,7 @@ import { OnboardingComponent } from './onboarding/onboarding.component';
 import { StepperComponent } from './shared/stepper/stepper/stepper.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CdkStepperModule } from '@angular/cdk/stepper';
@@ -23,6 +24,7 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 
     // Material modules
     MatFormFieldModule,
+    MatIconModule,
     MatInputModule,
     MatButtonModule,
   ],
