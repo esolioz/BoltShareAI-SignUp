@@ -212,33 +212,68 @@
     </cdk-step>
     <!-- Review step -->
     <cdk-step>
-        <div class="review">
-            <!-- Navigation items-->
-            <ng-template cdkStepLabel>
-                <div class="bs-steps-item__icon">
-                    <mat-icon>check_circle_outline</mat-icon>
-                </div>
-                <div class="bs-steps-item__content">
-                    <div class="bs-content-title">Review</div>
-                    <div class="bs-content-subtitle">Let’s make sure
-                        everything’s right.</div>
-                </div>
-            </ng-template>
-            <h2>Review your info</h2>
-            <div>Username : john.doe@foo.com</div>
-            <div>Email : john.doe@foo.com</div>
-            <div>First name : John</div>
-            <div>Last name : Doe</div>
-            <div>Address
-                <ul>
-                    <li>600 Amphitheatre Parkway</li>
-                    <li>Mountain View</li>
-                    <li>CA 94043, USA</li>
-                </ul>
+
+        <!-- Navigation items-->
+        <ng-template cdkStepLabel>
+            <div class="bs-steps-item__icon">
+                <mat-icon>check_circle_outline</mat-icon>
             </div>
-            <button mat-flat-button color="primary">Complete</button>
-            <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
-            <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
+            <div class="bs-steps-item__content">
+                <div class="bs-content-title">Review</div>
+                <div class="bs-content-subtitle">Let’s make sure
+                    everything’s right.</div>
+            </div>
+        </ng-template>
+        <!-- Header -->
+        <div class="bs-right-content-top">
+            <div class="bs-right-content-top__header">
+                <div class="bs-header-icon">
+                    <mat-icon>article</mat-icon>
+                </div>
+                <h2 class="bs-header-title">Review</h2>
+                <div class="bs-header-subtitle">Let’s make sure
+                    everything’s right.</div>
+            </div>
+        </div>
+        <div class="bs-right-content-main">
+            <div class="bs-right-content-main__review">
+
+                <div class="bs-review-content">
+                    <div class="bs-review-content__row">
+                        <p class="bs-row-label">Username</p>
+                        <p class="bs-row-value">john.doe@foo.com</p>
+                    </div>
+
+                    <div class="bs-review-content__row">
+                        <p class="bs-row-label">Email</p>
+                        <p class="bs-row-value">john.doe@foo.com</p>
+                    </div>
+
+                    <div class="bs-review-content__row">
+                        <div class="flex">
+                            <div class="flex-full">
+                                <p class="bs-row-label">First name</p>
+                                <p class="bs-row-value">John</p>
+                            </div>
+                            <div class="flex-full">
+                                <p class="bs-row-label">Last name</p>
+                                <p class="bs-row-value">Doe</p>
+                            </div>
+                        </div>
+                        <div class="flex-full">
+                            <p class="bs-row-label">Address</p>
+                            <p class="bs-row-value">600 Amphitheatre Parkway</p>
+                            <p class="bs-row-value">Mountain View</p>
+                            <p class="bs-row-value">CA 94043, USA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bs-review-actions">
+                    <button mat-flat-button color="primary">Complete</button>
+                    <button mat-stroked-button color="primary" cdkStepperPrevious>Back</button>
+                    <button mat-button color="primary" (click)="bsCdkStepper.reset()">Cancel</button>
+                </div>
+            </div>
         </div>
     </cdk-step>
 </app-stepper>

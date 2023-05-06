@@ -257,6 +257,44 @@ body {
             gap: 1.5rem;
           }
         }
+        &__review {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          margin-block-start: 4rem;
+
+          .bs-review-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            &__row {
+              background-color: #f3f3f3;
+              border-radius: 6px;
+              padding-block: 0.5rem;
+              padding-inline: 1rem;
+
+              p {
+                margin-block: 0.5rem;
+              }
+
+              .bs-row-label {
+                color: #858585;
+                font-weight: 300;
+              }
+              .bs-row-value {
+                color: #01213c;
+                font-weight: 300;
+              }
+            }
+          }
+
+          .bs-review-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+          }
+        }
       }
     }
   }
