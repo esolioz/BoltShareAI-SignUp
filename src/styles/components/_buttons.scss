@@ -1,0 +1,40 @@
+@use "./../abstracts/colors";
+
+.bs-button {
+  &.mdc-button {
+    text-transform: uppercase;
+    font-size: 14px;
+    padding-block: 1.2rem;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  &--primary {
+    &.mat-mdc-unelevated-button:not(:disabled) {
+      background-color: colors.$base-blue;
+      color: $lighter-grey;
+      border-color: $base-blue;
+    }
+  }
+
+  &--secondary {
+    &.mat-mdc-unelevated-button:not(:disabled) {
+      background-color: colors.$base-white;
+      color: colors.$base-blue;
+      border-color: colors.$base-blue;
+    }
+  }
+
+  &--tertiary {
+    &.mat-mdc-unelevated-button:not(:disabled) {
+      color: colors.$base-blue;
+      border-color: transparent;
+    }
+  }
+
+  &--disabled {
+    &.mat-mdc-unelevated-button[disabled] {
+      border-color: colors.$light-grey;
+    }
+  }
+}
