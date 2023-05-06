@@ -1,6 +1,6 @@
-<app-stepper #bsCdkStepper>
+<app-stepper #bsCdkStepper linear>
     <!-- User details step -->
-    <cdk-step>
+    <cdk-step [stepControl]="formUserDetails">
         <!-- Navigation items-->
         <ng-template cdkStepLabel>
             <div class="bs-stepper__left-content__top__steps__step-item__icon">
@@ -66,8 +66,7 @@
         </div>
     </cdk-step>
     <!-- Password step -->
-    <cdk-step>
-
+    <cdk-step [stepControl]="formPassword">
         <!-- Navigation items-->
         <ng-template cdkStepLabel>
             <div class="bs-steps-item__icon">
@@ -121,8 +120,7 @@
         </div>
     </cdk-step>
     <!-- Payment step -->
-    <cdk-step>
-
+    <cdk-step [stepControl]="formPayment">
         <!-- Navigation items-->
         <ng-template cdkStepLabel>
             <div class="bs-steps-item__icon">
@@ -215,7 +213,6 @@
     </cdk-step>
     <!-- Review step -->
     <cdk-step>
-
         <!-- Navigation items-->
         <ng-template cdkStepLabel>
             <div class="bs-steps-item__icon">
