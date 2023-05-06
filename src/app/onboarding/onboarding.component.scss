@@ -1,0 +1,10 @@
+.navigation {
+  margin-block-end: 2rem;
+  &__title {
+    color: rgb(5, 5, 5);
+  }
+}
+
+.navigation:hover {
+  cursor: pointer;
+}
