@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "/dist/bolt-share-ai-sign-up",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
