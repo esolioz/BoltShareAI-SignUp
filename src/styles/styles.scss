@@ -312,6 +312,27 @@ body {
           }
         }
       }
+
+      .bs-content-nav {
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+        justify-content: center;
+        margin-inline: auto;
+        margin-block-start: 6rem;
+
+        &__item {
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          background-color: #a5bccf;
+        }
+        &__item--selected {
+          width: 40px;
+          border-radius: 4px;
+          background-color: #013e73;
+        }
+      }
     }
   }
 }
