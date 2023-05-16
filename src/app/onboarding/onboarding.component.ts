@@ -33,7 +33,7 @@ export class OnboardingComponent {
   formPayment = this._formBuilder.group({
     creditCardNumber: ['', Validators.required],
     creditCardExpiryDate: ['', Validators.required],
-    creditCardCvvCode: ['', Validators.required],
+    creditCardCvcCode: ['', Validators.required],
     street: ['', Validators.required],
     postalCode: ['', Validators.required],
     city: ['', Validators.required],
