@@ -64,6 +64,14 @@
                 </div>
             </form>
         </div>
+
+        <div class="bs-content-nav">
+            <div class="bs-content-nav__item bs-content-nav__item--selected"></div>
+            <div class="bs-content-nav__item"></div>
+            <div class="bs-content-nav__item"></div>
+            <div class="bs-content-nav__item"></div>
+        </div>
+
     </cdk-step>
     <!-- Password step -->
     <cdk-step [stepControl]="formPassword">
@@ -117,6 +125,12 @@
                         (click)="bsCdkStepper.reset()">Cancel</button>
                 </div>
             </form>
+        </div>
+        <div class="bs-content-nav">
+            <div class="bs-content-nav__item"></div>
+            <div class="bs-content-nav__item bs-content-nav__item--selected"></div>
+            <div class="bs-content-nav__item"></div>
+            <div class="bs-content-nav__item"></div>
         </div>
     </cdk-step>
     <!-- Payment step -->
@@ -188,7 +202,7 @@
                     <div class="flex-col flex-full gap-2">
                         <mat-label class="form-label">City / town / village</mat-label>
                         <mat-form-field appearance="outline">
-                            <input matInput formControlName="city" ype="text" placeholder="City / town / village">
+                            <input matInput formControlName="city" type="text" placeholder="City / town / village">
                         </mat-form-field>
                     </div>
                 </div>
@@ -196,19 +210,25 @@
                 <div class="flex-col gap-2">
                     <mat-label class="form-label">Country</mat-label>
                     <mat-form-field appearance="outline">
-                        <input matInput formControlName="country" ype="text" placeholder="Country">
+                        <input matInput formControlName="country" type="text" placeholder="Country">
                     </mat-form-field>
                 </div>
 
                 <div class="bs-form-actions">
                     <button mat-flat-button class="bs-button bs-button_primary"
-                        [ngClass]="{'bs-button_disabled':formPassword.invalid}" cdkStepperNext
+                        [ngClass]="{'bs-button_disabled':formPayment.invalid}" cdkStepperNext
                         [disabled]="formPayment.invalid">Next</button>
                     <button mat-flat-button class="bs-button bs-button_secondary" cdkStepperPrevious>Back</button>
                     <button mat-flat-button class="bs-button bs-button_tertiary"
                         (click)="bsCdkStepper.reset()">Cancel</button>
                 </div>
             </form>
+        </div>
+        <div class="bs-content-nav">
+            <div class="bs-content-nav__item"></div>
+            <div class="bs-content-nav__item"></div>
+            <div class="bs-content-nav__item bs-content-nav__item--selected"></div>
+            <div class="bs-content-nav__item"></div>
         </div>
     </cdk-step>
     <!-- Review step -->
@@ -275,6 +295,12 @@
                         (click)="bsCdkStepper.reset()">Cancel</button>
                 </div>
             </div>
+        </div>
+        <div class="bs-content-nav">
+            <div class="bs-content-nav__item"></div>
+            <div class="bs-content-nav__item"></div>
+            <div class="bs-content-nav__item"></div>
+            <div class="bs-content-nav__item bs-content-nav__item--selected"></div>
         </div>
     </cdk-step>
 </app-stepper>
