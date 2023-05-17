@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRippleModule } from '@angular/material/core';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 
 @NgModule({
@@ -27,6 +28,7 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
     MatIconModule,
     MatInputModule,
     MatButtonModule,
+    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

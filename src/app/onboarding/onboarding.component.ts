@@ -1,5 +1,5 @@
 import { CdkStepper } from '@angular/cdk/stepper';
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { IUser } from '../models/user';
 
@@ -8,7 +8,7 @@ import { IUser } from '../models/user';
   templateUrl: './onboarding.component.html',
   styleUrls: ['./onboarding.component.scss'],
 })
-export class OnboardingComponent {
+export class OnboardingComponent implements OnInit {
   @ViewChild('bsCdkStepper') bsCdkStepper!: CdkStepper;
 
   userDetails = {} as IUser;
@@ -44,7 +44,15 @@ export class OnboardingComponent {
     country: ['', Validators.required],
   });
 
+  passwordIsHidden!: boolean;
+  confirmPasswordIsHidden!: boolean;
+
   constructor(private _formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.passwordIsHidden = true;
+    this.confirmPasswordIsHidden = true;
+  }
 
   onPreview(): void {
     this.formUserDetails.patchValue({

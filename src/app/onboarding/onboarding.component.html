@@ -39,22 +39,31 @@
 
             <form [formGroup]="formUserDetails" class="bs-right-content-main__form">
                 <div class="flex-col gap-2">
-                    <mat-label class="form-label">First name</mat-label>
+                    <mat-label class="bs-form-label">First name<span class="bs-required">*</span></mat-label>
                     <mat-form-field appearance="outline">
                         <input matInput formControlName="firstName" type="text" placeholder="Enter your first name">
+                        <mat-error class="bs-error"
+                            *ngIf="formUserDetails.controls['firstName'].invalid"><mat-icon>info</mat-icon>Enter your
+                            first name</mat-error>
                     </mat-form-field>
                 </div>
                 <div class="flex-col gap-2">
-                    <mat-label class="form-label">Last name</mat-label>
+                    <mat-label class="bs-form-label">Last name<span class="bs-required">*</span></mat-label>
                     <mat-form-field appearance="outline">
 
                         <input matInput formControlName="lastName" type="text" placeholder="Enter your last name">
+                        <mat-error class="bs-error"
+                            *ngIf="formUserDetails.controls['lastName'].invalid"><mat-icon>info</mat-icon>Enter your
+                            last name</mat-error>
                     </mat-form-field>
                 </div>
                 <div class="flex-col gap-2">
-                    <mat-label class="form-label">Email</mat-label>
+                    <mat-label class="bs-form-label">Email<span class="bs-required">*</span></mat-label>
                     <mat-form-field appearance="outline">
                         <input matInput formControlName="email" type="text" placeholder="Enter your email">
+                        <mat-error class="bs-error"
+                            *ngIf="formUserDetails.controls['email'].invalid"><mat-icon>info</mat-icon>Check your
+                            email</mat-error>
                     </mat-form-field>
                 </div>
                 <div class="bs-form-actions">
@@ -102,18 +111,24 @@
         <div class="bs-right-content-main">
             <form [formGroup]="formPassword" class="bs-right-content-main__form">
                 <div class="flex-col gap-2">
-                    <mat-label class="form-label">Password</mat-label>
+                    <mat-label class="bs-form-label">Password</mat-label>
                     <mat-form-field appearance="outline">
-                        <input matInput formControlName="password" type="password" placeholder="Password">
-                        <mat-icon matIconSuffix>visibility</mat-icon>
+                        <input matInput formControlName="password" [type]="passwordIsHidden ? 'password' : 'text'"
+                            placeholder="Password">
+                        <mat-icon matIconSuffix (click)="passwordIsHidden = !passwordIsHidden">{{passwordIsHidden ?
+                            'visibility_off' :
+                            'visibility'}}</mat-icon>
                     </mat-form-field>
                 </div>
                 <div class="flex-col gap-2">
-                    <mat-label class="form-label">Confirm password</mat-label>
+                    <mat-label class="bs-form-label">Confirm password</mat-label>
                     <mat-form-field appearance="outline">
-                        <input matInput formControlName="confirmPassword" type="password"
-                            placeholder="Confirm password">
-                        <mat-icon matIconSuffix>visibility_off</mat-icon>
+                        <input matInput formControlName="confirmPassword"
+                            [type]="confirmPasswordIsHidden ? 'password' : 'text'" placeholder="Confirm password">
+                        <mat-icon matIconSuffix
+                            (click)="confirmPasswordIsHidden = !confirmPasswordIsHidden">{{confirmPasswordIsHidden ?
+                            'visibility_off' :
+                            'visibility'}}</mat-icon>
                     </mat-form-field>
                 </div>
                 <div class="bs-form-actions">
@@ -160,7 +175,7 @@
 
             <form [formGroup]="formPayment" class="bs-right-content-main__form">
                 <div class="flex-col gap-1">
-                    <mat-label class="form-label">Card number</mat-label>
+                    <mat-label class="bs-form-label">Card number</mat-label>
                     <mat-form-field appearance="outline">
                         <input matInput formControlName="creditCardNumber" class="input" type="text"
                             placeholder="Card number">
@@ -169,14 +184,14 @@
 
                 <div class="flex-col gap-1 bs-form-location-date-cvc">
                     <div class="flex-col flex-full gap-2">
-                        <mat-label class="form-label">Expiry date</mat-label>
+                        <mat-label class="bs-form-label">Expiry date</mat-label>
                         <mat-form-field appearance="outline">
                             <input matInput formControlName="creditCardExpiryDate" class="input" type="text"
                                 placeholder="MM / YY">
                         </mat-form-field>
                     </div>
                     <div class="flex-col flex-full gap-2">
-                        <mat-label class="form-label">CVC</mat-label>
+                        <mat-label class="bs-form-label">CVC</mat-label>
                         <mat-form-field appearance="outline">
                             <input matInput formControlName="creditCardCvcCode" class="input" type="number"
                                 placeholder="CVC">
@@ -185,7 +200,7 @@
                 </div>
 
                 <div class="flex-col gap-2">
-                    <mat-label class="form-label">Street address</mat-label>
+                    <mat-label class="bs-form-label">Street address</mat-label>
                     <mat-form-field appearance="outline">
                         <input matInput formControlName="street" type="text" placeholder="Street address">
                     </mat-form-field>
@@ -193,14 +208,14 @@
 
                 <div class="flex-col gap-1 bs-form-location">
                     <div class="flex-col flex-full gap-2">
-                        <mat-label class="form-label">Postal code</mat-label>
+                        <mat-label class="bs-form-label">Postal code</mat-label>
                         <mat-form-field appearance="outline">
                             <input matInput formControlName="postalCode" type="text" placeholder="Postal code">
                         </mat-form-field>
                     </div>
 
                     <div class="flex-col flex-full gap-2">
-                        <mat-label class="form-label">City / town / village</mat-label>
+                        <mat-label class="bs-form-label">City / town / village</mat-label>
                         <mat-form-field appearance="outline">
                             <input matInput formControlName="city" type="text" placeholder="City / town / village">
                         </mat-form-field>
@@ -208,7 +223,7 @@
                 </div>
 
                 <div class="flex-col gap-2">
-                    <mat-label class="form-label">Country</mat-label>
+                    <mat-label class="bs-form-label">Country</mat-label>
                     <mat-form-field appearance="outline">
                         <input matInput formControlName="country" type="text" placeholder="Country">
                     </mat-form-field>
