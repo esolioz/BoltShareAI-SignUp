@@ -27,7 +27,11 @@
   gap: 2rem;
 }
 
-.form-label {
+.bs-form-label {
   font-weight: 500;
   color: #01213c;
+
+  .bs-required {
+    margin-left: 3px;
+  }
 }

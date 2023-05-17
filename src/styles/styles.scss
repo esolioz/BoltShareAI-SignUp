@@ -271,6 +271,7 @@ body {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
+            margin-top: 1rem;
           }
         }
         &__review {
@@ -309,6 +310,7 @@ body {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
+            margin-top: 1rem;
           }
         }
       }
@@ -319,7 +321,7 @@ body {
         align-items: center;
         justify-content: center;
         margin-inline: auto;
-        margin-block-start: 6rem;
+        margin-block: 4rem 3rem;
 
         &__item {
           width: 9px;
