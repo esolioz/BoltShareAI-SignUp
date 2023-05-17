@@ -1,6 +1,7 @@
 import { CdkStepper } from '@angular/cdk/stepper';
 import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { IUser } from '../models/user';
 
 @Component({
   selector: 'app-onboarding',
@@ -9,6 +10,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class OnboardingComponent {
   @ViewChild('bsCdkStepper') bsCdkStepper!: CdkStepper;
+
+  userDetails = {} as IUser;
+
   /**
    * User details
    */
@@ -41,4 +45,26 @@ export class OnboardingComponent {
   });
 
   constructor(private _formBuilder: FormBuilder) {}
+
+  onPreview(): void {
+    this.formUserDetails.patchValue({
+      username: this.formUserDetails.get('email')?.value,
+    });
+
+    this.userDetails = {
+      firstName: this.formUserDetails.get('firstName')?.value || '',
+      lastName: this.formUserDetails.get('lastName')?.value || '',
+      email: this.formUserDetails.get('email')?.value || '',
+      username: this.formUserDetails.get('username')?.value || '',
+      address: {
+        street: this.formPayment.get('street')?.value || '',
+        postalCode: parseInt(
+          this.formPayment.get('postalCode')?.value || '',
+          10
+        ),
+        city: this.formPayment.get('city')?.value || '',
+        country: this.formPayment.get('country')?.value || '',
+      },
+    };
+  }
 }

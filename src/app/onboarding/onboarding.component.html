@@ -217,7 +217,7 @@
                 <div class="bs-form-actions">
                     <button mat-flat-button class="bs-button bs-button_primary"
                         [ngClass]="{'bs-button_disabled':formPayment.invalid}" cdkStepperNext
-                        [disabled]="formPayment.invalid">Next</button>
+                        [disabled]="formPayment.invalid" (click)="onPreview()">Next</button>
                     <button mat-flat-button class="bs-button bs-button_secondary" cdkStepperPrevious>Back</button>
                     <button mat-flat-button class="bs-button bs-button_tertiary"
                         (click)="bsCdkStepper.reset()">Cancel</button>
@@ -261,30 +261,31 @@
                 <div class="bs-review-content">
                     <div class="bs-review-content__row">
                         <p class="bs-row-label">Username</p>
-                        <p class="bs-row-value">john.doe@foo.com</p>
+                        <p class="bs-row-value">{{ this.userDetails.username}}</p>
                     </div>
 
                     <div class="bs-review-content__row">
                         <p class="bs-row-label">Email</p>
-                        <p class="bs-row-value">john.doe@foo.com</p>
+                        <p class="bs-row-value">{{ this.userDetails.email}}</p>
                     </div>
 
                     <div class="bs-review-content__row">
                         <div class="flex">
                             <div class="flex-full">
                                 <p class="bs-row-label">First name</p>
-                                <p class="bs-row-value">John</p>
+                                <p class="bs-row-value">{{ this.userDetails.firstName}}</p>
                             </div>
                             <div class="flex-full">
                                 <p class="bs-row-label">Last name</p>
-                                <p class="bs-row-value">Doe</p>
+                                <p class="bs-row-value">{{ this.userDetails.lastName}}</p>
                             </div>
                         </div>
                         <div class="flex-full">
                             <p class="bs-row-label">Address</p>
-                            <p class="bs-row-value">600 Amphitheatre Parkway</p>
-                            <p class="bs-row-value">Mountain View</p>
-                            <p class="bs-row-value">CA 94043, USA</p>
+                            <p class="bs-row-value">{{ this.userDetails.address?.street }}</p>
+                            <p class="bs-row-value">{{ this.userDetails.address?.postalCode}} {{
+                                this.userDetails.address?.city}}</p>
+                            <p class="bs-row-value">{{ this.userDetails.address?.country}}</p>
                         </div>
                     </div>
                 </div>
