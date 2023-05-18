@@ -111,17 +111,20 @@
         <div class="bs-right-content-main">
             <form [formGroup]="formPassword" class="bs-right-content-main__form">
                 <div class="flex-col gap-2">
-                    <mat-label class="bs-form-label">Password</mat-label>
+                    <mat-label class="bs-form-label">Password<span class="bs-required">*</span></mat-label>
                     <mat-form-field appearance="outline">
                         <input matInput formControlName="password" [type]="passwordIsHidden ? 'password' : 'text'"
                             placeholder="Password">
                         <mat-icon matIconSuffix (click)="passwordIsHidden = !passwordIsHidden">{{passwordIsHidden ?
                             'visibility_off' :
                             'visibility'}}</mat-icon>
+                        <mat-error class="bs-error"
+                            *ngIf="formPassword.controls['password'].invalid"><mat-icon>info</mat-icon>Set the
+                            password</mat-error>
                     </mat-form-field>
                 </div>
                 <div class="flex-col gap-2">
-                    <mat-label class="bs-form-label">Confirm password</mat-label>
+                    <mat-label class="bs-form-label">Confirm password<span class="bs-required">*</span></mat-label>
                     <mat-form-field appearance="outline">
                         <input matInput formControlName="confirmPassword"
                             [type]="confirmPasswordIsHidden ? 'password' : 'text'" placeholder="Confirm password">
@@ -129,6 +132,9 @@
                             (click)="confirmPasswordIsHidden = !confirmPasswordIsHidden">{{confirmPasswordIsHidden ?
                             'visibility_off' :
                             'visibility'}}</mat-icon>
+                        <mat-error class="bs-error"
+                            *ngIf="formPassword.controls['confirmPassword'].invalid"><mat-icon>info</mat-icon>Confirm
+                            the password</mat-error>
                     </mat-form-field>
                 </div>
                 <div class="bs-form-actions">
@@ -175,57 +181,80 @@
 
             <form [formGroup]="formPayment" class="bs-right-content-main__form">
                 <div class="flex-col gap-1">
-                    <mat-label class="bs-form-label">Card number</mat-label>
+                    <mat-label class="bs-form-label">Card number<span class="bs-required">*</span></mat-label>
                     <mat-form-field appearance="outline">
                         <input matInput formControlName="creditCardNumber" class="input" type="text"
                             placeholder="Card number">
+                        <mat-error class="bs-error"
+                            *ngIf="formPayment.controls['creditCardNumber'].invalid"><mat-icon>info</mat-icon>Check the
+                            credit card number</mat-error>
                     </mat-form-field>
                 </div>
 
                 <div class="flex-col gap-1 bs-form-location-date-cvc">
                     <div class="flex-col flex-full gap-2">
-                        <mat-label class="bs-form-label">Expiry date</mat-label>
+                        <mat-label class="bs-form-label">Expiry date<span class="bs-required">*</span></mat-label>
                         <mat-form-field appearance="outline">
                             <input matInput formControlName="creditCardExpiryDate" class="input" type="text"
                                 placeholder="MM / YY">
+                            <mat-error class="bs-error"
+                                *ngIf="formPayment.controls['creditCardExpiryDate'].invalid"><mat-icon>info</mat-icon>Check
+                                the expiry date</mat-error>
                         </mat-form-field>
                     </div>
                     <div class="flex-col flex-full gap-2">
-                        <mat-label class="bs-form-label">CVC</mat-label>
+                        <mat-label class="bs-form-label">CVC<span class="bs-required">*</span></mat-label>
                         <mat-form-field appearance="outline">
                             <input matInput formControlName="creditCardCvcCode" class="input" type="number"
                                 placeholder="CVC">
+                            <mat-error class="bs-error"
+                                *ngIf="formPayment.controls['creditCardCvcCode'].invalid"><mat-icon>info</mat-icon>Check
+                                the
+                                cvc code</mat-error>
                         </mat-form-field>
                     </div>
                 </div>
 
                 <div class="flex-col gap-2">
-                    <mat-label class="bs-form-label">Street address</mat-label>
+                    <mat-label class="bs-form-label">Street address<span class="bs-required">*</span></mat-label>
                     <mat-form-field appearance="outline">
                         <input matInput formControlName="street" type="text" placeholder="Street address">
+                        <mat-error class="bs-error"
+                            *ngIf="formPayment.controls['street'].invalid"><mat-icon>info</mat-icon>Enter the
+                            address</mat-error>
                     </mat-form-field>
                 </div>
 
                 <div class="flex-col gap-1 bs-form-location">
                     <div class="flex-col flex-full gap-2">
-                        <mat-label class="bs-form-label">Postal code</mat-label>
+                        <mat-label class="bs-form-label">Postal code<span class="bs-required">*</span></mat-label>
                         <mat-form-field appearance="outline">
                             <input matInput formControlName="postalCode" type="text" placeholder="Postal code">
+                            <mat-error class="bs-error"
+                                *ngIf="formPayment.controls['postalCode'].invalid"><mat-icon>info</mat-icon>Enter the
+                                postal code</mat-error>
                         </mat-form-field>
                     </div>
 
                     <div class="flex-col flex-full gap-2">
-                        <mat-label class="bs-form-label">City / town / village</mat-label>
+                        <mat-label class="bs-form-label">City / town / village<span
+                                class="bs-required">*</span></mat-label>
                         <mat-form-field appearance="outline">
                             <input matInput formControlName="city" type="text" placeholder="City / town / village">
+                            <mat-error class="bs-error"
+                                *ngIf="formPayment.controls['city'].invalid"><mat-icon>info</mat-icon>Enter the
+                                city</mat-error>
                         </mat-form-field>
                     </div>
                 </div>
 
                 <div class="flex-col gap-2">
-                    <mat-label class="bs-form-label">Country</mat-label>
+                    <mat-label class="bs-form-label">Country<span class="bs-required">*</span></mat-label>
                     <mat-form-field appearance="outline">
                         <input matInput formControlName="country" type="text" placeholder="Country">
+                        <mat-error class="bs-error"
+                            *ngIf="formPayment.controls['country'].invalid"><mat-icon>info</mat-icon>Enter the
+                            country</mat-error>
                     </mat-form-field>
                 </div>
 
