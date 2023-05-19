@@ -8,7 +8,7 @@ import { OnboardingComponent } from './onboarding/onboarding.component';
 import { StepperComponent } from './shared/stepper/stepper/stepper.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRippleModule } from '@angular/material/core';
@@ -33,4 +33,8 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(iconRegistry: MatIconRegistry) {
+    iconRegistry.setDefaultFontSetClass('material-symbols-outlined');
+  }
+}
